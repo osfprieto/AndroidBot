@@ -1,0 +1,22 @@
+package control;
+
+import gui.MainUI;
+
+public class MainControl {
+	
+	private IFactory factory;
+	
+	public static void main(String[] args){
+		MainControl mainControl = new MainControl();
+		MainUI mainUI = new MainUI(mainControl);
+		mainUI.setVisible(true);
+	}
+	
+	public MainControl(){
+		factory = new Factory();
+	}
+	
+	public IFactory getFactory(){
+		return factory;
+	}
+}

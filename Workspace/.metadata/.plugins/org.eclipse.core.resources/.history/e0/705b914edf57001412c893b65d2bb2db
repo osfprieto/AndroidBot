@@ -1,0 +1,9 @@
+package control;
+
+import gui.IMainUI;
+
+public interface IMainClass {
+	public IFactory getFactory();
+	public IMainControl getMainControl();
+	public IMainUI getMainUI();
+}

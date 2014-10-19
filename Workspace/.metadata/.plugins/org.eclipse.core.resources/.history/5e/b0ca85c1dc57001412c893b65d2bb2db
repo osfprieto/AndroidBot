@@ -1,0 +1,17 @@
+package control;
+
+import gui.MainUI;
+
+/**
+ * Start of the program. Instantiates the UI, the Factory and the  to be used on the entire program.
+ * Not unit testable because it's dependable on other classes.
+ * */
+public class MainControl {
+	
+	
+	
+	public MainControl(){
+		
+	}
+	
+}

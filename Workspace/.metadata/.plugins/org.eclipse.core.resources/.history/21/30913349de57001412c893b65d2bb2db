@@ -1,0 +1,5 @@
+package gui;
+
+public interface IMainUI {
+	public void setVisible(boolean visible);
+}

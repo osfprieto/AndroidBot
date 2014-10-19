@@ -6,9 +6,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import control.IDataResolver;
-import control.MainControl;
+import control.IMainClass;
 
-public class MainUI extends javax.swing.JFrame {
+public class MainUI extends javax.swing.JFrame implements IMainUI{
 	
 	// Variables declaration - do not modify                     
     private JButton addEventButton;
@@ -22,13 +22,16 @@ public class MainUI extends javax.swing.JFrame {
     private JButton moveUpButton;
 	private ImagePanel imagePanel;
 	
-	private MainControl mainControl;
+	private IMainClass mainClass;
+	private IDataResolver dataResolver;
 	
     /**
      * Creates new form MainUI
      */
-    public MainUI(MainControl mainControl) {
-    	this.mainControl = mainControl;
+    public MainUI(IMainClass mainClass) {
+    	this.mainClass = mainClass;
+    	dataResolver = (IDataResolver) mainClass.getFactory()
+				.getInstanceOf(IDataResolver.class, null/*args*/);
         initComponents();
     }
 
@@ -37,8 +40,8 @@ public class MainUI extends javax.swing.JFrame {
      */
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
-
-        imagePanel = new ImagePanel(mainControl);
+    	
+        imagePanel = new ImagePanel(dataResolver.getLocalImageFileLocation());
         buttonsPanel = new javax.swing.JPanel();
         addEventButton = new javax.swing.JButton();
         deleteEventButton = new javax.swing.JButton();

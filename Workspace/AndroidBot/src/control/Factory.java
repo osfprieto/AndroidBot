@@ -22,7 +22,10 @@ public class Factory implements IFactory{
 	
 	/**
 	 * Saves an instance of the singleton classes and instantiates a new
-	 * instance of the rest of the classes each time the method is called.*/
+	 * instance of the rest of the classes each time the method is called.
+	 * @param clazz The Class object of the instance wanted
+	 * @param args Array of objects with the information required for the specific constructor of the interface implementation
+	 * @return The instance of the required class*/
 	@Override
 	public Object getInstanceOf(Class clazz, Object[] args) {
 		Object instance = instances.get(clazz);

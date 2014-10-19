@@ -7,14 +7,11 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-import control.IDataResolver;
-import control.MainControl;
-
 public class ImagePanel extends JPanel{
-	private MainControl mainControl;
+	private String imageLocation;
 	
-    public ImagePanel(MainControl mainControl) {
-    	this.mainControl = mainControl;
+    public ImagePanel(String imageLocation) {
+    	this.imageLocation = imageLocation;
     	setOpaque(false);
     }
 
@@ -22,9 +19,7 @@ public class ImagePanel extends JPanel{
     protected void paintComponent(Graphics g) {
     	super.paintComponent(g);
     	try{
-    		IDataResolver dataResolver = (IDataResolver) mainControl.getFactory()
-					.getInstanceOf(IDataResolver.class, null/*args*/);
-    		File file = new File(dataResolver.getLocalImageFileLocation());
+    		File file = new File(imageLocation);
     		BufferedImage image = ImageIO.read(file);
     		g.drawImage(image, 0/*x*/, 0/*y*/, null/*observer*/);
     	}catch(Exception e){

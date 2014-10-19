@@ -19,3 +19,5 @@
 1413752097325	Rename field 'workingDirectoryAbsoluthPath'
 1413753179809	Delete element
 1413753584806	Rename type 'AndroidBotFactory'
+1413756633089	Rename compilation unit 'Main.java'
+1413756638561	Move compilation unit

@@ -1,22 +1,14 @@
 package control;
 
-import gui.MainUI;
-
-public class MainControl {
+/**
+ * Start of the program. Instantiates the UI, the Factory and the  to be used on the entire program.
+ * Not unit testable because it's dependable on other classes.
+ * */
+public class MainControl implements IMainControl{
 	
-	private IFactory factory;
+	private IMainClass mainClass;
 	
-	public static void main(String[] args){
-		MainControl mainControl = new MainControl();
-		MainUI mainUI = new MainUI(mainControl);
-		mainUI.setVisible(true);
-	}
-	
-	public MainControl(){
-		factory = new Factory();
-	}
-	
-	public IFactory getFactory(){
-		return factory;
+	public MainControl(IMainClass mainClass){
+		this.mainClass = mainClass;
 	}
 }

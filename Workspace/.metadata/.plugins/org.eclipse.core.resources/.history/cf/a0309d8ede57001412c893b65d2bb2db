@@ -1,0 +1,7 @@
+package control;
+
+public interface IMainClass {
+	public IFactory getFactory();
+	public IMainControl getMainControl();
+	public IMainUI getMainUI();
+}
