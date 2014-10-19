@@ -1,0 +1,29 @@
+!SESSION 2014-10-19 11:55:55.797 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.8.0_20
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_419
+Framework arguments:  -product org.eclipse.epp.package.standard.product -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.standard.product -data D:\Documentos\Workspaces\Repos\AndroidBot\Workspace -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.eclipse.e4.core.services 4 0 2014-10-19 11:55:57.230
+!MESSAGE Invalid locale format: es_419 - Only language part will be used to create the Locale.
+
+!ENTRY com.google.gdt.eclipse.suite 1 0 2014-10-19 12:05:15.934
+!MESSAGE Registering: com.google.appengine.eclipse.sdkbundle_1.9.10
+
+!ENTRY com.google.gdt.eclipse.suite 1 0 2014-10-19 12:05:16.004
+!MESSAGE Registering: com.google.gwt.eclipse.sdkbundle_2.6.0
+
+!ENTRY org.eclipse.core.net 4 0 2014-10-19 12:10:41.067
+!MESSAGE WinHttp.GetProxyForUrl for pac failed with error 'No se pudo descargar el script de configuración automática del proxy
+' #12167.
+
+!ENTRY org.sonar.ide.eclipse.core 4 0 2014-10-19 12:10:43.241
+!MESSAGE Unknown version for SonarQube server (http://localhost:9000). Please check server is reachable.
+
+!ENTRY org.sonar.ide.eclipse.core 4 0 2014-10-19 12:10:51.573
+!MESSAGE Unknown version for SonarQube server (http://localhost:9000). Please check server is reachable.
+
+!ENTRY org.sonar.ide.eclipse.core 4 0 2014-10-19 12:12:18.078
+!MESSAGE Unknown version for SonarQube server (http://localhost:9000). Please check server is reachable.

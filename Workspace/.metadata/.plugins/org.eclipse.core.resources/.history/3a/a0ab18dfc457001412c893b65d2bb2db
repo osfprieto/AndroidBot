@@ -1,0 +1,36 @@
+package control;
+
+import java.util.HashMap;
+
+import entities.InputRotationEvent;
+
+/**
+ * Implementation of the IFactory interface that instantiates every object used by the program.
+ * Uses singleton pattern where it's not necessary to have multiple instances like the Command Executer.
+ * Not unit testable because it's dependable on other classes.*/
+public class AndroidBotFactory implements IFactory{
+
+	private HashMap<Class, Object> instances;
+	
+	public AndroidBotFactory(){
+		instances = new HashMap<Class, Object>();
+	}
+	
+	/**
+	 * Saves an instance of the singleton classes and instantiates a new instance of the rest of the classes
+	 * each time the method is called.*/
+	@Override
+	public Object getInstanceOf(Class clazz, Object[] args) {
+		Object instance = instances.get(clazz);
+		if(instance == null){
+			
+			if(clazz.equals(InputRotationEvent.class)){
+				return new InputRotationEvent((Integer)args[0]);
+			}
+			else if(clazz.equals(InputRotationEvent.class)){
+				return new InputRotationEvent(args[0]);
+			}
+			
+		}
+	}
+}

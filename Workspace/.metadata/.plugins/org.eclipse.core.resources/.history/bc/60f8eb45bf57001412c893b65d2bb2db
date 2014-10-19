@@ -1,0 +1,22 @@
+package tests.entities;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import entities.IEvent;
+
+public class InputEventFactoryTest {
+
+	@Test
+	public void createEvent_validArgumentsForValidClass_callsConstructor() {
+		//Setup
+		Class<IEvent>[] classes = new Class[1];
+		classes[0] = EventMock.class;
+		
+		//Operation
+		
+		//Assertion
+	}
+
+}

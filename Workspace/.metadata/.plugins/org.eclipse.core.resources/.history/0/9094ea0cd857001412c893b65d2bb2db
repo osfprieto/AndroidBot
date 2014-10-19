@@ -1,0 +1,58 @@
+package control;
+
+import java.io.File;
+
+public class DataResolver implements IDataResolver{
+
+	private String localWorkingDirectory;
+	private String deviceWorkingDirectory;
+	private String localImageFileLocation;
+	private String deviceImageFileLocation;
+	private String auxFileName;
+	private String imageFileName;
+	
+	public DataResolver(){
+		resolveData();
+	}
+	
+	private void resolveData(){
+		auxFileName = "aux.txt";
+		imageFileName = "AndroidBot.png";
+		File auxFile = new File(auxFileName);
+		localWorkingDirectory = auxFile.getParent();
+		deviceWorkingDirectory = "/sdcard/screenshots";
+		localImageFileLocation = localWorkingDirectory+File.separator+imageFileName;
+		deviceImageFileLocation = deviceWorkingDirectory+File.separator+imageFileName;
+	}
+	
+	@Override
+	public String getLocalImageFileLocation() {
+		return localImageFileLocation;
+	}
+
+	@Override
+	public String getLocalWorkingDirectory() {
+		return localWorkingDirectory;
+	}
+	
+	@Override
+	public String getDeviceImageFileLocation() {
+		return deviceImageFileLocation;
+	}
+
+	@Override
+	public String getDeviceWorkingDirectory() {
+		return deviceWorkingDirectory;
+	}
+
+	@Override
+	public String getAuxFileName() {
+		return auxFileName;
+	}
+
+	@Override
+	public String getImageFileName() {
+		return imageFileName;
+	}
+
+}

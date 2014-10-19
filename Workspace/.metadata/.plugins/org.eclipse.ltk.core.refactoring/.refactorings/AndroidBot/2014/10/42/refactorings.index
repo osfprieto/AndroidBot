@@ -1,0 +1,21 @@
+1413742068138	Rename type 'InputFactory'
+1413743323309	Move compilation unit
+1413743600114	Infer generic type arguments
+1413743664153	Rename type 'IEventSpy'
+1413743686878	Rename type 'IEventMock'
+1413743754081	Rename compilation unit 'IEventSpy.java'
+1413743781150	Rename compilation unit 'IEventMock.java'
+1413743962303	Delete element
+1413743975149	Delete element
+1413744003673	Rename type 'IEventFactory'
+1413744069307	Rename type 'InputEventFactory'
+1413744100801	Move compilation units
+1413744396282	Rename type 'Factory'
+1413747685906	Delete elements
+1413749842422	Rename compilation unit 'MainGUI.java'
+1413751140171	Rename type 'IConstants'
+1413752041574	Rename field 'imageFileLocation'
+1413752064526	Rename field 'imageFileLocationOnDevice'
+1413752097325	Rename field 'workingDirectoryAbsoluthPath'
+1413753179809	Delete element
+1413753584806	Rename type 'AndroidBotFactory'

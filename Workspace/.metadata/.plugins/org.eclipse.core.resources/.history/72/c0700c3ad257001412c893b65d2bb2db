@@ -1,0 +1,46 @@
+package control;
+
+import java.io.File;
+
+public class DataResolver implements IDataResolver{
+
+	private String workingDirectoryAbsoluthPath;
+	private String localImageFileLocation;
+	private String deviceImageFileLocation;
+	private String auxFileName;
+	private String imageFileName;
+	
+	public DataResolver(){
+		resolveData();
+	}
+	
+	public void resolveData(){
+		auxFileName = "aux.txt";
+		imageFileName = "image.png";
+		
+		File auxFile = new File(auxFileName);
+		workingDirectoryAbsoluthPath = auxFile.getParent();
+		localImageFileLocation = workingDirectoryAbsoluthPath+File.separator+imageFileName;
+	}
+	
+	@Override
+	public String getImageFileLocation() {
+		return localImageFileLocation;
+	}
+
+	@Override
+	public String getWorkingDirectoryAbsoluthPath() {
+		return workingDirectoryAbsoluthPath;
+	}
+
+	@Override
+	public String getAuxFileName() {
+		return auxFileName;
+	}
+
+	@Override
+	public String getImageFileName() {
+		return imageFileName;
+	}
+
+}

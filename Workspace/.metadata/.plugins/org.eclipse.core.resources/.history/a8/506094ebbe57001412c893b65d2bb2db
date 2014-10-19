@@ -1,0 +1,16 @@
+package tests.entities;
+
+import entities.IEvent;
+
+public class EventMock implements IEvent{
+
+	private String arg0;
+	private int arg1;
+	
+	public EventMock
+	
+	public String getCommand() {
+		return "spy event "+
+	}
+
+}

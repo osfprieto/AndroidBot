@@ -1,0 +1,23 @@
+package control;
+
+import java.io.File;
+
+public class DataResolver implements IDataResolver{
+
+	private String imageFileLocation;
+	
+	public DataResolver(){
+		imageFileLocation;
+		resolveData();
+	}
+	
+	public void resolveData(){
+		File auxFile = new File("aux.txt");
+	}
+	
+	@Override
+	public String getImageFileLocation() {
+		return imageFileLocation;
+	}
+
+}

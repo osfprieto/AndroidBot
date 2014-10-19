@@ -1,0 +1,15 @@
+package entities;
+
+public class InputEventFactory implements IEventFactory{
+
+	private Class<IEvent>[] classes;
+	
+	public InputEventFactory(Class<IEvent>[] classes){
+		this.classes = classes;
+	}
+	
+	public IEvent createEvent(int type, Object[] args) {
+		return classes[type].getDeclaredConstructors()[0].newInstance(args)
+	}
+	
+}

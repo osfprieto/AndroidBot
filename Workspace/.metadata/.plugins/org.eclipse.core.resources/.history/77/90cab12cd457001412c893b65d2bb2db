@@ -1,0 +1,30 @@
+package gui;
+
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
+
+import control.IDataResolver;
+
+public class ImagePanel extends JPanel{
+	private IDataResolver dataResolver;
+	
+    public ImagePanel(IDataResolver dataResolver) {
+    	this.dataResolver = dataResolver;
+    	setOpaque(false);
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+    	super.paintComponent(g);
+    	try{
+    		BufferedImage image = ImageIO.read(new File(dataResolver.getLocalImageFileLocation()));
+    		g.drawImage(image, 0/*x*/, 0/*y*/, null/*observer*/);
+    	}catch(Exception e){
+    		
+    	}
+    }
+}

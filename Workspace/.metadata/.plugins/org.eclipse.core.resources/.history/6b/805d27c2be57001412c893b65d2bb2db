@@ -1,0 +1,13 @@
+package tests.entities;
+
+import entities.IEvent;
+
+public class IEventSpy implements IEvent{
+
+	private String
+	
+	public String getCommand() {
+		return "spy event "+
+	}
+
+}

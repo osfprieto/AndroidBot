@@ -1,0 +1,17 @@
+package control;
+
+/**
+ * Implementation of the IFactory interface that instantiates every object used by the program.
+ * Uses singleton pattern where it's not necessary to have multiple instances like the Command Executer*/
+public class AndroidBotFactory implements IFactory{
+
+	public AndroidBotFactory(){
+		
+	}
+	
+	@Override
+	public Object getInstanceOf(Class clazz) {
+		
+	}
+
+}

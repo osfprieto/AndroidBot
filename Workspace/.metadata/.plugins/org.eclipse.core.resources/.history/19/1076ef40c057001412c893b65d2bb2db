@@ -1,0 +1,19 @@
+package control;
+
+import java.lang.reflect.InvocationTargetException;
+
+import entities.IEvent;
+
+public class Factory implements IFactory{
+
+	public Factory(){
+		
+	}
+	
+	@Override
+	public Object getInstanceOf(Class clazz) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

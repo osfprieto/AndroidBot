@@ -1,0 +1,20 @@
+package control;
+
+public class DataResolver implements IDataResolver{
+
+	private String imageFileLocation;
+	
+	public DataResolver(){
+		resolveData();
+	}
+	
+	public void resolveData(){
+		
+	}
+	
+	@Override
+	public String getImageFileLocation() {
+		return imageFileLocation;
+	}
+
+}

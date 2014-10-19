@@ -1,0 +1,21 @@
+package tests.entities;
+
+import entities.IEvent;
+
+/**
+ * Used in InputEventFactoryTest*/
+public class EventMock implements IEvent{
+
+	private String arg0;
+	private int arg1;
+	
+	public EventMock(String arg0, int arg1){
+		this.arg0 = arg0;
+		this.arg1 = arg1;
+	}
+	
+	public String getCommand() {
+		return "spy event "+arg0+" "+arg1;
+	}
+
+}

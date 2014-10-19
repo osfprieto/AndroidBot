@@ -1,0 +1,12 @@
+package entities;
+
+/**
+ * Creates instances of a given type of IEvent*/
+public interface IFactory{
+	/**
+	 * @param type Type of event to create
+	 * @parm args Arguments that the specific type of event would use.
+	 * @return The instance of the specific type of event
+	 * */
+	public IEvent createEvent(int type, Object[] args);
+}

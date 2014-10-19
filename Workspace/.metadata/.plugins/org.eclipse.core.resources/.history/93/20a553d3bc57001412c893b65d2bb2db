@@ -1,0 +1,34 @@
+package entities;
+
+import java.lang.reflect.InvocationTargetException;
+
+public class InputEventFactory implements IEventFactory{
+
+	private Class<IEvent>[] classes;
+	
+	public InputEventFactory(Class<IEvent>[] classes){
+		this.classes = classes;
+	}
+	
+	public IEvent createEvent(int type, Object[] args) {
+		try {
+			return (IEvent) classes[type].getDeclaredConstructors()[0].newInstance(args);
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+}

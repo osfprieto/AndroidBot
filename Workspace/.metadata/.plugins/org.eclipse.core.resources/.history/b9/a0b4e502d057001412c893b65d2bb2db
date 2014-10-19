@@ -1,0 +1,7 @@
+package control;
+
+/**
+ * This interface resolves*/
+public interface IDataResolver {
+	
+}

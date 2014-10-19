@@ -1,0 +1,47 @@
+Instrucciones en ADB Shell
+
+Para iniciar la shell, en consola:
+
+adb shell
+
+Esto inicia la shell, ahora podemos usar:
+
+dumpsys
+	Muestra trazas de todo lo que pasa en el sistema
+dumpsys window windows
+	Muestra trazas de todo lo que pasa en el sistema relacionado a la GUI
+dumpsys window windows | grep "mUnrestrictedScreen"
+	Muestra la resolución de la pantalla
+/system/bin/screencap -p <device location>
+	Guarda una captura de pantalla en la ubicación <device location>
+
+input tap <x> <y>
+	Simula un tap en la pantalla en la posición (x, y)
+input text <string>
+	Escribe la cadena de texto en dónde se encuentre el cursor del dispositivo
+input swipe <x1> <y1> <x2> <y2>
+	Hace un swipe de un punto al otro
+input keyevent <key code>
+	Registra la activación de la tecla con ese key code: http://developer.android.com/reference/android/view/KeyEvent.html
+input rotationevent <rotation>
+	rotation: 0 = 0°, 1 = 90°, 2 = 180°, 3 = 270°
+
+am start -n <package name>/<activity name>
+	Starts a new Intent of the defined activity of that package name.
+monkey <n>
+	Hace monkey n veces, Monkey hace eventos aleatorios sobr el sistema
+monkey <n> -throttle <t>
+	Throttle hace que el tiempo entre eventos sea de t milisegundos
+
+Para realizar pruebas de monkey runner (monkey pero con instrucciones específicas)
+
+Descargamos los archivos del repo: https://github.com/Jesse-calkin/Monkey-Recording
+monkey_playback.py
+monkey_rercorder.py
+Los guardamos en la carpeta tools del sdk de android
+Vamos por consola esa carpeta y ejecutamos:
+
+monkeyrunner monkey_recorder.py
+	Abre interfaz para crear archivo de script con la secuencia de comandos a ejecutar
+monkeyrunner monkey_playback <script file>
+	Ejecuta el script que guardamos con el recorder sobre el dispositivo conectado por el ADB.

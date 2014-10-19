@@ -1,0 +1,41 @@
+package control;
+
+import java.lang.reflect.InvocationTargetException;
+
+import entities.IEvent;
+
+public class Factory implements IFactory{
+
+	private Class<IEvent>[] classes;
+	
+	public Factory(Class<IEvent>[] classes){
+		this.classes = classes;
+	}
+	
+	public IEvent createEvent(int type, Object[] args) {
+		try {
+			return (IEvent) classes[type].getDeclaredConstructors()[0].newInstance(args);
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+}

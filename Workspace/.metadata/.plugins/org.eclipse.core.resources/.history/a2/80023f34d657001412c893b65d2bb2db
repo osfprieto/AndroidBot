@@ -1,0 +1,11 @@
+package control;
+
+import gui.MainUI;
+
+public class MainControl {
+	public static void main(String[] args){
+		MainControl mainControl = new MainControl():
+		MainUI mainUI = new MainUI(mainControl);
+		mainUI.setVisible(true);
+	}
+}

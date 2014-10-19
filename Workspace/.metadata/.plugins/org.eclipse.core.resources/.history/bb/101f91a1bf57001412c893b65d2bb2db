@@ -1,0 +1,8 @@
+package control;
+
+/**
+ * Creates instances of a given type of IEvent*/
+public interface IFactory{
+	
+	
+}

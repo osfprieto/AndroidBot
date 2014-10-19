@@ -1,0 +1,14 @@
+package tests.entities;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class InputEventFactoryTest {
+
+	@Test
+	public void createEvent_validArgumentsForValidClass_callsConstructor() {
+		fail("Not yet implemented");
+	}
+
+}

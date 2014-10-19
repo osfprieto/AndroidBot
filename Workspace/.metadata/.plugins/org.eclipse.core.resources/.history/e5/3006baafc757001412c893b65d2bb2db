@@ -1,0 +1,7 @@
+package control;
+
+/**
+ * We put all the constants of raw and String type here*/
+public interface IConstants {
+	
+}

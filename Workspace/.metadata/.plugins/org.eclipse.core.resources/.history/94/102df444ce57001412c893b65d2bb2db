@@ -1,0 +1,21 @@
+package gui;
+
+import javax.swing.JPanel;
+
+public class ImagePanel extends JPanel{
+	private IConstants constants;
+	
+    public ImagePanel() {
+       try {                
+          image = ImageIO.read(new File("image name and path"));
+       } catch (IOException ex) {
+            // handle exception...
+       }
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawImage(image, 0, 0, null); // see javadoc for more info on the parameters            
+    }
+}

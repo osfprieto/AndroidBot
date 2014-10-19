@@ -1,0 +1,11 @@
+package entities;
+
+public class InputEventFactory implements IEventFactory{
+
+	
+	
+	public IEvent createEvent(int type, Object[] args) {
+		
+	}
+	
+}

@@ -1,0 +1,19 @@
+package control;
+
+import java.lang.reflect.InvocationTargetException;
+
+import entities.IEvent;
+
+public class AndroidBotFactory implements IFactory{
+
+	public AndroidBotFactory(){
+		
+	}
+	
+	@Override
+	public Object getInstanceOf(Class clazz) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
