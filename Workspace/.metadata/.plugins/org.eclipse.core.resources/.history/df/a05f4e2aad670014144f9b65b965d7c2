@@ -5,7 +5,4 @@ package gui;
  * should appear here.*/
 public interface IMainUI {
 	public void setVisible(boolean visible);
-	
-	public void lockPlayButton();
-	public void unlockPlayButton();
 }

@@ -72,8 +72,6 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
         );
 
         addEventButton.setText("Add event");
-        
-        playEventsButton.setText("Play events");
 
         deleteEventButton.setText("Delete event");
 
@@ -90,9 +88,7 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
         buttonsPanelLayout.setHorizontalGroup(
             buttonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(buttonsPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(playEventsButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(27, 27, 27)
                 .addGroup(buttonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(buttonsPanelLayout.createSequentialGroup()
                         .addComponent(addEventButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -106,12 +102,12 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
                 .addGroup(buttonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(moveDownButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(moveUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         buttonsPanelLayout.setVerticalGroup(
             buttonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonsPanelLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addContainerGap()
                 .addGroup(buttonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addEventButton)
                     .addComponent(eventTypesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -122,10 +118,6 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
                     .addComponent(modifyEventButton)
                     .addComponent(moveDownButton))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonsPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(playEventsButton)
-                .addGap(35, 35, 35))
         );
 
         javax.swing.GroupLayout eventListPanelLayout = new javax.swing.GroupLayout(eventListPanel);
@@ -165,18 +157,17 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
         );
         
         addEventButton.addActionListener(this);
-        playEventsButton.addActionListener(this);
         
         pack();
         setSize(950, 600);
     }
     
     public void lockPlayButton(){
-    	playEventsButton.setEnabled(false);
+    	
     }
     
     public void unlockPlayButton(){
-    	playEventsButton.setEnabled(true);
+    	
     }
 
 	public void actionPerformed(ActionEvent e) {
@@ -194,9 +185,6 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
 				mainClass.getMainControl().addTapEvent();
 			else if(opt==4)
 				mainClass.getMainControl().addTextEvent();
-		}
-		else if(e.getSource().equals(playEventsButton)){
-			mainClass.getMainControl().playEvents();
 		}
 		
 	}

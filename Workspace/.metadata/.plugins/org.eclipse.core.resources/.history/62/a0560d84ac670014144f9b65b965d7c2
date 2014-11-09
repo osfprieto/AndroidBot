@@ -25,7 +25,6 @@ public class MainControl implements IMainControl{
 	public MainControl(IMainClass mainClass){
 		this.mainClass = mainClass;
 		events = new LinkedList<IEvent>();
-		commandExecuter = new ShellCommandExecuter();
 	}
 	
 	public List<IEvent> getEvents(){
@@ -67,10 +66,4 @@ public class MainControl implements IMainControl{
 		ui.show();
 	}
 	
-	public void playEvents(){
-		mainClass.getMainUI().lockPlayButton();
-		for(IEvent event : events)
-			commandExecuter.executeCommand("adb "+event.getCommand());
-		mainClass.getMainUI().unlockPlayButton();
-	}
 }

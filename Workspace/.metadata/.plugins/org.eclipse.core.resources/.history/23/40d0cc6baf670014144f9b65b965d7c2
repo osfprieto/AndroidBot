@@ -172,11 +172,11 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
     }
     
     public void lockPlayButton(){
-    	playEventsButton.setEnabled(false);
+    	
     }
     
     public void unlockPlayButton(){
-    	playEventsButton.setEnabled(true);
+    	
     }
 
 	public void actionPerformed(ActionEvent e) {
@@ -194,9 +194,6 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
 				mainClass.getMainControl().addTapEvent();
 			else if(opt==4)
 				mainClass.getMainControl().addTextEvent();
-		}
-		else if(e.getSource().equals(playEventsButton)){
-			mainClass.getMainControl().playEvents();
 		}
 		
 	}

@@ -9,6 +9,5 @@ public interface IMainControl {
 	public void addSwipeEvent();
 	public void addTapEvent();
 	public void addTextEvent();
-	public void playEvents();
 	
 }

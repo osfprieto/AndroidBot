@@ -12,9 +12,7 @@ public class ShellCommandExecuter implements ICommandExecuter{
 	@Override
 	public String executeCommand(String command) {
 		StringBuilder output = new StringBuilder();
-		
-		System.out.println(command);
-		
+		 
 		Process p;
 		try {
 			p = Runtime.getRuntime().exec(command);
