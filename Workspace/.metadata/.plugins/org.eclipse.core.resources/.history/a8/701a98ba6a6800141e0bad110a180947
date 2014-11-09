@@ -64,35 +64,27 @@ public class MainControl implements IMainControl, Serializable{
 	}
 	
 	public void addSwipeEvent(){
-		Object[] args = new Object[5];
+		Object[] args = new Object[1];
 		args[0] = 0;
 		args[1] = 0;
 		args[2] = 100;
 		args[3] = 100;
-		args[4] = new Long(1000);
-		InputSwipe swipe = (InputSwipe)
-				mainClass.getFactory().getInstanceOf(InputSwipe.class, args);
+		args[4] = 1000;
+		InputSwipe swipe = new InputSwipe(0, 0, 100, 100, 1000);
 		events.add(swipe);
 		InputSwipeUI ui = new InputSwipeUI(swipe);
 		ui.show();
 	}
 	
 	public void addTapEvent(){
-		Object[] args = new Object[2];
-		args[0] = 0;
-		args[1] = 0;
-		InputTap tap = (InputTap)
-				mainClass.getFactory().getInstanceOf(InputTap.class, args);
+		InputTap tap = new InputTap(0, 0);
 		events.add(tap);
 		InputTapUI ui = new InputTapUI(tap);
 		ui.show();
 	}
 	
 	public void addTextEvent(){
-		Object[] args = new Object[1];
-		args[0] = "";
-		InputText text = (InputText)
-				mainClass.getFactory().getInstanceOf(InputText.class, args);
+		InputText text = new InputText("");
 		events.add(text);
 		InputTextUI ui = new InputTextUI(text);
 		ui.show();

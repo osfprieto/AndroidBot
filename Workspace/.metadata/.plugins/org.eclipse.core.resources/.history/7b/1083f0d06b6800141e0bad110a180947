@@ -89,10 +89,7 @@ public class MainControl implements IMainControl, Serializable{
 	}
 	
 	public void addTextEvent(){
-		Object[] args = new Object[1];
-		args[0] = "";
-		InputText text = (InputText)
-				mainClass.getFactory().getInstanceOf(InputText.class, args);
+		InputText text = new InputText("");
 		events.add(text);
 		InputTextUI ui = new InputTextUI(text);
 		ui.show();
