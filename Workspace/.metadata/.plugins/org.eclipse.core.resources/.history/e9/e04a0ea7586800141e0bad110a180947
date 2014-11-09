@@ -28,14 +28,12 @@ public class MainControl implements IMainControl, Serializable{
 	
 	public MainControl(IMainClass mainClass){
 		this.mainClass = mainClass;
-		events = new LinkedList<IEvent>();
 		dataResolver = (IDataResolver) mainClass.getFactory()
 				.getInstanceOf(IDataResolver.class, null/*args*/);
-		commandExecuter = (ICommandExecuter) mainClass.getFactory()
-				.getInstanceOf(ICommandExecuter.class, null/*args*/);
+		events = new LinkedList<IEvent>();
+		commandExecuter = new ShellCommandExecuter();
 		commandExecuter.executeCommand("adb shell mkdir "+dataResolver.getDeviceWorkingDirectory());
-		persistenceControl = (IPersistenceControl) mainClass.getFactory()
-				.getInstanceOf(IPersistenceControl.class, null/*args*/);
+		persistenceControl = new PersistenceControl();
 		startImageThread();
 	}
 	

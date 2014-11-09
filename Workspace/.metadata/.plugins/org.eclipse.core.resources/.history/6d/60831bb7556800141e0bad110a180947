@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -26,7 +27,7 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
     private JButton deleteEventButton;
     private JPanel eventListPanel;
     private JComboBox<String> eventTypesComboBox;
-    private JScrollPane scrollEvents;
+    private JScrollPane jScrollPane1;
     private JButton modifyEventButton;
     private JButton moveDownButton;
     private JButton moveUpButton;
@@ -65,7 +66,7 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
         moveDownButton = new javax.swing.JButton();
         eventTypesComboBox = new javax.swing.JComboBox<String>();
         moveUpButton = new javax.swing.JButton();
-        scrollEvents = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
         eventListPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -167,7 +168,8 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
 
         eventListPanel.setLayout(new BoxLayout(eventListPanel, BoxLayout.PAGE_AXIS));
         
-        scrollEvents.setViewportView(eventListPanel);
+
+        jScrollPane1.setViewportView(eventListPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -178,7 +180,7 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(buttonsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollEvents, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -186,7 +188,7 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
             .addComponent(imagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollEvents, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(buttonsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())

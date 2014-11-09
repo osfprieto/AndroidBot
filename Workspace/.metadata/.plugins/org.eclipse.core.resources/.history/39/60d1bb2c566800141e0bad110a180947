@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -27,6 +28,7 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
     private JPanel eventListPanel;
     private JComboBox<String> eventTypesComboBox;
     private JScrollPane scrollEvents;
+    private JScrollPane scrollImage;
     private JButton modifyEventButton;
     private JButton moveDownButton;
     private JButton moveUpButton;
@@ -66,6 +68,7 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
         eventTypesComboBox = new javax.swing.JComboBox<String>();
         moveUpButton = new javax.swing.JButton();
         scrollEvents = new javax.swing.JScrollPane();
+        scrollImage = new javax.swing.JScrollPane();
         eventListPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -168,6 +171,7 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
         eventListPanel.setLayout(new BoxLayout(eventListPanel, BoxLayout.PAGE_AXIS));
         
         scrollEvents.setViewportView(eventListPanel);
+        scrollImage.setViewportView(imagePanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

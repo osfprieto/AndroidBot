@@ -58,9 +58,6 @@ public class Factory implements IFactory{
 			else if(clazz.equals(IDataResolver.class)){
 				instances.put(clazz, new DataResolver());
 			}
-			else if(clazz.equals(IPersistenceControl.class)){
-				instances.put(clazz, new PersistenceControl());
-			}
 			
 			instance = instances.get(clazz);
 		}
