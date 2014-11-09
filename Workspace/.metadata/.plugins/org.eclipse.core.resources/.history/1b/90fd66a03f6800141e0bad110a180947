@@ -155,14 +155,12 @@ public class MainControl implements IMainControl, Serializable{
 
 			@Override
 			public void run() {
-				while(true){
-					try{
-						pullImageFromDevice();
-						Thread.sleep(1000);
-					}
-					catch(Exception e){
-						e.printStackTrace();
-					}
+				try{
+					pullImageFromDevice();
+					Thread.sleep(1000);
+				}
+				catch(Exception e){
+					e.printStackTrace();
 				}
 			}
 			

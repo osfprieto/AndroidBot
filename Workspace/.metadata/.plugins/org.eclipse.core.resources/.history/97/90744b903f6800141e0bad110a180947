@@ -19,7 +19,7 @@ public class DataResolver implements IDataResolver{
 		imageFileName = "AndroidBot.png";
 		localWorkingDirectory = Paths.get("").toAbsolutePath().toString();
 		deviceWorkingDirectory = "/sdcard/screenshots";
-		localImageFileLocation = localWorkingDirectory+"\\"+imageFileName;
+		localImageFileLocation = localWorkingDirectory+"/"+imageFileName;
 		deviceImageFileLocation = deviceWorkingDirectory+"/"+imageFileName;
 	}
 	
