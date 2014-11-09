@@ -1,0 +1,15 @@
+package gui;
+
+import javax.swing.JPanel;
+
+import entities.InputKeyEvent;
+
+public class KeyEventUI extends JPanel{
+
+	private InputKeyEvent event;
+	
+	public KeyEventUI(InputKeyEvent event){
+		super("Key event");
+	}
+	
+}

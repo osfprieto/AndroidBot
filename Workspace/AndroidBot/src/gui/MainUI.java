@@ -1,5 +1,8 @@
 package gui;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
@@ -8,7 +11,7 @@ import javax.swing.JScrollPane;
 import control.IDataResolver;
 import control.IMainClass;
 
-public class MainUI extends javax.swing.JFrame implements IMainUI{
+public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListener{
 	
 	// Variables declaration - do not modify                     
     private JButton addEventButton;
@@ -74,10 +77,10 @@ public class MainUI extends javax.swing.JFrame implements IMainUI{
 
         moveDownButton.setText("Move down");
 
-        eventTypesComboBox.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        eventTypesComboBox.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "Key", "Rotation", "Swipe", "Tap", "Text" }));
 
         moveUpButton.setText("Move up");
-
+        
         javax.swing.GroupLayout buttonsPanelLayout = new javax.swing.GroupLayout(buttonsPanel);
         buttonsPanel.setLayout(buttonsPanelLayout);
         buttonsPanelLayout.setHorizontalGroup(
@@ -150,8 +153,29 @@ public class MainUI extends javax.swing.JFrame implements IMainUI{
                 .addComponent(buttonsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-
+        
+        addEventButton.addActionListener(this);
+        
         pack();
-        setSize(700, 500);
-    }                   
+        setSize(950, 600);
+    }
+
+	public void actionPerformed(ActionEvent e) {
+		
+		if(e.getSource().equals(addEventButton)){
+			//{ "Key", "Rotation", "Swipe", "Tap", "Text" }
+			int opt = eventTypesComboBox.getSelectedIndex();
+			if(opt==0)
+				mainClass.getMainControl().addKeyEvent();
+			else if(opt==1)
+				mainClass.getMainControl().addRotationEvent();
+			else if(opt==2)
+				mainClass.getMainControl().addSwipeEvent();
+			else if(opt==3)
+				mainClass.getMainControl().addTapEvent();
+			else if(opt==4)
+				mainClass.getMainControl().addTextEvent();
+		}
+		
+	}
 }

@@ -1,0 +1,45 @@
+package gui;
+
+import java.awt.GridLayout;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
+
+import entities.InputText;
+
+public class InputTextUI {
+	
+	private InputText event;
+	private JPanel panel;
+	private JTextField textField;
+	
+	public InputTextUI(InputText event){
+		if(event!=null)
+			this.event = event;
+		else
+			this.event = new InputText("");
+		panel = new JPanel();
+		panel.setLayout(new GridLayout(1, 2));
+		
+		textField = new JTextField("");
+		
+		panel.add(new JLabel("text"));
+		panel.add(textField);
+	}
+	
+	public InputTap getEvent(){
+		return event;
+	}
+	
+	public void show(){
+		xSpinner.setValue(event.getX());
+		ySpinner.setValue(event.getY());
+		JOptionPane.showMessageDialog(null, panel);
+		event.setX((Integer)xSpinner.getValue());
+		event.setY((Integer)ySpinner.getValue());
+	}
+	
+}

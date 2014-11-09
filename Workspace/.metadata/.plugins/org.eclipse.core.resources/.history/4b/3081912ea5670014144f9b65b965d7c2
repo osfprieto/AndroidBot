@@ -1,0 +1,47 @@
+package control;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import entities.IEvent;
+import entities.InputKeyEvent;
+import entities.InputRotationEvent;
+import entities.InputSwipe;
+import gui.InputKeyEventUI;
+import gui.InputRotationEventUI;
+
+
+public class MainControl implements IMainControl{
+	
+	private List<IEvent> events;
+	private IMainClass mainClass;
+	
+	public MainControl(IMainClass mainClass){
+		this.mainClass = mainClass;
+		events = new LinkedList<IEvent>();
+	}
+	
+	public List<IEvent> getEvents(){
+		return events;
+	}
+	
+	public void addKeyEvent(){
+		InputKeyEvent keyEvent = new InputKeyEvent(0);
+		events.add(keyEvent);
+		InputKeyEventUI ui = new InputKeyEventUI(keyEvent);
+		ui.show();
+	}
+	
+	public void addRotationEvent(){
+		InputRotationEvent rotationEvent = new InputRotationEvent(0);
+		events.add(rotationEvent);
+		InputRotationEventUI ui = new InputRotationEventUI(rotationEvent);
+		ui.show();
+	}
+	
+	public void addSwipeEvent(){
+		InputSwipe swipe = new InputSwipe(0, 0, 100, 100, 1000);
+		events.add(swipe);
+	}
+	
+}

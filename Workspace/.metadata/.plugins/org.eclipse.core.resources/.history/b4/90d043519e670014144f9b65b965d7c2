@@ -1,0 +1,11 @@
+package control;
+
+
+public class MainControl implements IMainControl{
+	
+	private IMainClass mainClass;
+	
+	public MainControl(IMainClass mainClass){
+		this.mainClass = mainClass;
+	}
+}

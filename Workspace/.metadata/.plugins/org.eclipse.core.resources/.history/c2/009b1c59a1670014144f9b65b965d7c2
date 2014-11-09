@@ -1,0 +1,29 @@
+package entities;
+
+/**
+ * This event manages the Input keyevent event for the Android Shell.
+ * We can use this for the spaces on text*/
+public class InputKeyEvent implements IEvent{
+
+	private int keyCodeNumber;
+	private MainControl callback
+	
+	public InputKeyEvent(int keyCodeNumber, MainControl callback){
+		this.keyCodeNumber = keyCodeNumber;
+	}
+	
+	@Override
+	public String getCommand() {
+		return "input keyevent "+keyCodeNumber;
+	}
+
+	public int getKeyCodeNumber(){
+		return keyCodeNumber;
+	}
+	
+	public void setKeyCodeNumber(int keyCodeNumber){
+		this.keyCodeNumber = keyCodeNumber;
+	}
+	
+}
+

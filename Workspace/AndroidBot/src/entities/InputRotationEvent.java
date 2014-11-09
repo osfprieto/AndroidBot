@@ -15,5 +15,9 @@ public class InputRotationEvent implements IEvent{
 	public String getCommand() {
 		return "input rotationevent "+rotationCode;
 	}
+	
+	public void setRotationCode(int rotationCode){
+		this.rotationCode = rotationCode;
+	}
 
 }

@@ -1,0 +1,32 @@
+package control;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import entities.IEvent;
+import entities.InputKeyEvent;
+import gui.KeyEventUI;
+
+
+public class MainControl implements IMainControl{
+	
+	private List<IEvent> events;
+	private IMainClass mainClass;
+	
+	public MainControl(IMainClass mainClass){
+		this.mainClass = mainClass;
+		events = new LinkedList<IEvent>();
+	}
+	
+	public List<IEvent> getEvents(){
+		return events;
+	}
+	
+	public void addKeyEvent(){
+		InputKeyEvent keyEvent = new InputKeyEvent(0);
+		KeyEventUI ui = new KeyEventUI(keyEvent);
+		events.add(keyEvent);
+		ui.show();
+	}
+	
+}

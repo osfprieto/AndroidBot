@@ -1,0 +1,27 @@
+package gui;
+
+import javax.swing.JPanel;
+
+import entities.InputKeyEvent;
+
+public class KeyEventUI{
+
+	private InputKeyEvent event;
+	private JPanel panel;
+	
+	public KeyEventUI(InputKeyEvent event){
+		if(event!=null)
+			this.event = event;
+		else
+			this.event = new InputKeyEvent(0);
+	}
+	
+	public InputKeyEvent getEvent(){
+		return event;
+	}
+	
+	public void show(){
+		
+	}
+	
+}

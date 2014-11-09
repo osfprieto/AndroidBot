@@ -1,0 +1,19 @@
+package control;
+
+import java.util.LinkedList;
+
+import entities.IEvent;
+
+
+public class MainControl implements IMainControl{
+	
+	private LinkedList<IEvent> events;
+	private IMainClass mainClass;
+	
+	public MainControl(IMainClass mainClass){
+		this.mainClass = mainClass;
+	}
+	
+	
+	
+}

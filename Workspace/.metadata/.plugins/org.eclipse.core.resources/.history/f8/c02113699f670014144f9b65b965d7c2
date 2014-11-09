@@ -1,0 +1,15 @@
+package gui;
+
+import javax.swing.JFrame;
+
+import entities.InputKeyEvent;
+
+public class KeyEventUI extends JFrame{
+
+	private InputKeyEvent event;
+	
+	public KeyEventUI(InputKeyEvent event){
+		super("Key event");
+	}
+	
+}

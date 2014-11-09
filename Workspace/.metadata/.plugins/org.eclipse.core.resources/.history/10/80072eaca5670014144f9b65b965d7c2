@@ -1,0 +1,48 @@
+package gui;
+
+import java.awt.GridLayout;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+
+import entities.InputTap;
+
+public class InputTapUI {
+
+	private InputTap event;
+	private JPanel panel;
+	private JSpinner xSpinner;
+	private JSpinner ySpinner;
+	
+	public InputTapUI(InputTap event){
+		if(event!=null)
+			this.event = event;
+		else
+			this.event = new InputTap(0, 0);
+		panel = new JPanel();
+		panel.setLayout(new GridLayout(1, 2));
+		
+		xSpinner = new JSpinner();
+		ySpinner = new JSpinner();
+		
+		panel.add(new JLabel("x1"));
+		panel.add(xSpinner);
+		panel.add(new JLabel("y1"));
+		panel.add(ySpinner);
+	}
+	
+	public InputSwipe getEvent(){
+		return event;
+	}
+	
+	public void show(){
+		xSpinner.setValue(event.getX());
+		ySpinner.setValue(event.getY());
+		JOptionPane.showMessageDialog(null, panel);
+		event.setX((Integer)xSpinner.getValue());
+		event.setY((Integer)ySpinner.getValue());
+	}
+	
+}

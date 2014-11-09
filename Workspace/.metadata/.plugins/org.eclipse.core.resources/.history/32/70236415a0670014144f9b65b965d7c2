@@ -1,0 +1,31 @@
+package gui;
+
+import java.awt.GridLayout;
+
+import javax.swing.JPanel;
+
+import entities.InputKeyEvent;
+
+public class KeyEventUI{
+
+	private InputKeyEvent event;
+	private JPanel panel;
+	
+	public KeyEventUI(InputKeyEvent event){
+		if(event!=null)
+			this.event = event;
+		else
+			this.event = new InputKeyEvent(0);
+		panel = new JPanel();
+		panel.setLayout(new GridLayout(2, 1));
+	}
+	
+	public InputKeyEvent getEvent(){
+		return event;
+	}
+	
+	public void show(){
+
+	}
+	
+}

@@ -1,0 +1,58 @@
+package gui;
+
+import java.awt.GridLayout;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+
+import entities.InputSwipe;
+
+public class InputSwipeUI {
+
+	private InputSwipe event;
+	private JPanel panel;
+	private JSpinner x1Spinner;
+	private JSpinner y1Spinner;
+	private JSpinner x2Spinner;
+	private JSpinner y2Spinner;
+	private JSpinner millis;
+	
+	public InputSwipeUI(InputSwipe event){
+		if(event!=null)
+			this.event = event;
+		else
+			this.event = new InputSwipe(0, 0, 100, 100, 1000);
+		panel = new JPanel();
+		panel.setLayout(new GridLayout(1, 2));
+		
+		x1Spinner = new JSpinner();
+		y1Spinner = new JSpinner();
+		x2Spinner = new JSpinner();
+		y2Spinner = new JSpinner();
+		millis = new JSpinner();
+		
+		panel.add(new JLabel("x1"));
+		panel.add(x1Spinner);
+		panel.add(new JLabel("y1"));
+		panel.add(y1Spinner);
+		panel.add(new JLabel("x2"));
+		panel.add(x2Spinner);
+		panel.add(new JLabel("y2"));
+		panel.add(y2Spinner);
+		panel.add(new JLabel("millis"));
+		panel.add(millis);
+	}
+	
+	public InputSwipe getEvent(){
+		return event;
+	}
+	
+	public void show(){
+		x1Spinner.setValue(event.getX1());
+		JOptionPane.showMessageDialog(null, panel);
+		event.setKeyCodeNumber((Integer)keyCodeSpinner.getValue());
+	}
+	
+}

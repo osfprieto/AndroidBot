@@ -1,0 +1,12 @@
+package test;
+
+import javax.swing.JOptionPane;
+
+public class Test {
+
+	public static void main(String[] args) {
+		JTextField text = new JTextField();
+		JOptionPane.showMessageDialog(null, text);
+	}
+
+}

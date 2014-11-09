@@ -1,0 +1,37 @@
+package gui;
+
+import java.awt.GridLayout;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+
+import entities.InputKeyEvent;
+
+public class KeyEventUI{
+
+	private InputKeyEvent event;
+	private JPanel panel;
+	private JSpinner keyCodeSpinner;
+	
+	public KeyEventUI(InputKeyEvent event){
+		if(event!=null)
+			this.event = event;
+		else
+			this.event = new InputKeyEvent(0);
+		panel = new JPanel();
+		panel.setLayout(new GridLayout(1, 2));
+		panel.add(new JLabel("Key code"));
+		keyCodeSpinner = new JSpinner();
+		panel.add(keyCodeSpinner);
+	}
+	
+	public InputKeyEvent getEvent(){
+		return event;
+	}
+	
+	public void show(){
+		keyCodeSpinner.setValue(event.getKeyCodeNumber());
+	}
+	
+}

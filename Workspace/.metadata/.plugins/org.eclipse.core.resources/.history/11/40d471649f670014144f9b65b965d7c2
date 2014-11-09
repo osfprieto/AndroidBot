@@ -1,0 +1,11 @@
+package gui;
+
+import entities.InputKeyEvent;
+
+public class KeyEventUI extends JFrame{
+
+	public InputKeyEvent event;
+	
+	
+	
+}
