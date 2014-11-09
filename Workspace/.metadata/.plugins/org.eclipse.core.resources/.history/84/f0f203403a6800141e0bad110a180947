@@ -15,7 +15,6 @@ public interface IMainControl {
 	public void addTapEvent();
 	public void addTextEvent();
 	public void playEvents();
-	public void playEventsFrom(IEvent event);
 	public void saveEvents();
 	public void readEvents();
 	

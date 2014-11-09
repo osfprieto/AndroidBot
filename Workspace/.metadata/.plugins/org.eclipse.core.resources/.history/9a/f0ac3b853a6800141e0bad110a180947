@@ -80,17 +80,6 @@ public class MainControl implements IMainControl, Serializable{
 		mainClass.getMainUI().unlockPlayButton();
 	}
 	
-	public void playEventsFrom(IEvent event){
-		mainClass.getMainUI().lockPlayButton();
-		System.out.println("Playing events");
-		int index = events.indexOf(event);
-		for(int i=index;i<events.size();i++){
-			commandExecuter.executeCommand("adb shell "+events.get(i).getCommand());
-		}
-		System.out.println("End of the events\n");
-		mainClass.getMainUI().unlockPlayButton();
-	}
-	
 	public void saveEvents(){
 		persistenceControl.saveEvents(events);
 	}
