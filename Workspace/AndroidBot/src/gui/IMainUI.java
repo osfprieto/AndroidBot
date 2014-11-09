@@ -8,4 +8,5 @@ public interface IMainUI {
 	
 	public void lockPlayButton();
 	public void unlockPlayButton();
+	public void setSelectedEventLabel(EventLabel eventLabel);
 }

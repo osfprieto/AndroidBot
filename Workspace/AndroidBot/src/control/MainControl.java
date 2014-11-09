@@ -1,5 +1,6 @@
 package control;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,16 +17,18 @@ import gui.InputTapUI;
 import gui.InputTextUI;
 
 
-public class MainControl implements IMainControl{
+public class MainControl implements IMainControl, Serializable{
 	
 	private List<IEvent> events;
 	private ICommandExecuter commandExecuter;
 	private IMainClass mainClass;
+	private IPersistenceControl persistenceControl;
 	
 	public MainControl(IMainClass mainClass){
 		this.mainClass = mainClass;
 		events = new LinkedList<IEvent>();
 		commandExecuter = new ShellCommandExecuter();
+		persistenceControl = new PersistenceControl();
 	}
 	
 	public List<IEvent> getEvents(){
@@ -69,8 +72,48 @@ public class MainControl implements IMainControl{
 	
 	public void playEvents(){
 		mainClass.getMainUI().lockPlayButton();
-		for(IEvent event : events)
-			commandExecuter.executeCommand("adb "+event.getCommand());
+		System.out.println("Playing events");
+		for(IEvent event : events){
+			commandExecuter.executeCommand("adb shell "+event.getCommand());
+		}
+		System.out.println("End of the events\n");
 		mainClass.getMainUI().unlockPlayButton();
+	}
+	
+	public void saveEvents(){
+		persistenceControl.saveEvents(events);
+	}
+	
+	public void readEvents(){
+		List<IEvent> readEvents = persistenceControl.readEvents();
+		if(readEvents != null)
+			events = readEvents;
+	}
+	
+	public void modifyEvent(IEvent event){
+		if(event.getClass().equals(InputKeyEvent.class)){
+			InputKeyEventUI ui = new InputKeyEventUI((InputKeyEvent) event);
+			ui.show();
+		}
+		else if(event.getClass().equals(InputRotationEvent.class)){
+			InputRotationEventUI ui = new InputRotationEventUI((InputRotationEvent) event);
+			ui.show();
+		}
+		else if(event.getClass().equals(InputSwipe.class)){
+			InputSwipeUI ui = new InputSwipeUI((InputSwipe) event);
+			ui.show();
+		}
+		else if(event.getClass().equals(InputTap.class)){
+			InputTapUI ui = new InputTapUI((InputTap) event);
+			ui.show();
+		}
+		else if(event.getClass().equals(InputText.class)){
+			InputTextUI ui = new InputTextUI((InputText) event);
+			ui.show();
+		}
+	}
+	
+	public void deleteEvent(IEvent event){
+		events.remove(event);
 	}
 }

@@ -1,9 +1,11 @@
 package entities;
 
+import java.io.Serializable;
+
 /**
  * Implementation of the IEvent interface to handle Tap events for the Input
  * program of the Android Shell*/
-public class InputTap implements IEvent{
+public class InputTap implements IEvent, Serializable{
 	private int x;
 	private int y;
 	

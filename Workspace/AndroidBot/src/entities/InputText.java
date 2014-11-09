@@ -1,8 +1,10 @@
 package entities;
 
+import java.io.Serializable;
+
 /**
  * This event manages the Input text event for the Android Shell, one word per event*/
-public class InputText implements IEvent{
+public class InputText implements IEvent, Serializable{
 
 	private String text;
 	

@@ -1,14 +1,24 @@
 package control;
 
+import java.util.List;
+
+import entities.IEvent;
+
 /**
  * This interfaces controls all the operations that the program does before interacting with the user.*/
 public interface IMainControl {
 
+	public List<IEvent> getEvents();
 	public void addKeyEvent();
 	public void addRotationEvent();
 	public void addSwipeEvent();
 	public void addTapEvent();
 	public void addTextEvent();
 	public void playEvents();
+	public void saveEvents();
+	public void readEvents();
+	
+	public void modifyEvent(IEvent event);
+	public void deleteEvent(IEvent event);
 	
 }

@@ -1,7 +1,10 @@
 package entities;
+
+import java.io.Serializable;
+
 /**
 * This event manages the Input rotationevent event for the Android Shell*/
-public class InputRotationEvent implements IEvent{
+public class InputRotationEvent implements IEvent, Serializable{
 
 	private int rotationCode;
 	

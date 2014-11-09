@@ -2,7 +2,9 @@ package gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
@@ -10,12 +12,15 @@ import javax.swing.JScrollPane;
 
 import control.IDataResolver;
 import control.IMainClass;
+import entities.IEvent;
 
 public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListener{
 	
-	// Variables declaration - do not modify                     
+	// Variables declaration - do not modify
+	private JButton playEventsButton;
+	private JButton saveEventsButton;
+	private JButton readEventsButton;
     private JButton addEventButton;
-    private JButton playEventsButton;
     private JPanel buttonsPanel;
     private JButton deleteEventButton;
     private JPanel eventListPanel;
@@ -25,6 +30,8 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
     private JButton moveDownButton;
     private JButton moveUpButton;
 	private ImagePanel imagePanel;
+	
+	private EventLabel selectedEventLabel;
 	
 	private IMainClass mainClass;
 	private IDataResolver dataResolver;
@@ -47,8 +54,10 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
     	
         imagePanel = new ImagePanel(dataResolver.getLocalImageFileLocation());
         buttonsPanel = new javax.swing.JPanel();
-        addEventButton = new javax.swing.JButton();
         playEventsButton = new javax.swing.JButton();
+        saveEventsButton = new javax.swing.JButton();
+        readEventsButton = new javax.swing.JButton();
+        addEventButton = new javax.swing.JButton();
         deleteEventButton = new javax.swing.JButton();
         modifyEventButton = new javax.swing.JButton();
         moveDownButton = new javax.swing.JButton();
@@ -71,9 +80,13 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        addEventButton.setText("Add event");
-        
         playEventsButton.setText("Play events");
+        
+        saveEventsButton.setText("Save events");
+        
+        readEventsButton.setText("Read events");
+        
+        addEventButton.setText("Add event");
 
         deleteEventButton.setText("Delete event");
 
@@ -91,53 +104,50 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
             buttonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(buttonsPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(playEventsButton)
+                .addGroup(buttonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(buttonsPanelLayout.createSequentialGroup()
+                        .addComponent(playEventsButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(saveEventsButton))
+                    .addComponent(readEventsButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(buttonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonsPanelLayout.createSequentialGroup()
+                        .addComponent(deleteEventButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(modifyEventButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(buttonsPanelLayout.createSequentialGroup()
-                        .addComponent(addEventButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(eventTypesComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(buttonsPanelLayout.createSequentialGroup()
-                        .addComponent(deleteEventButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(modifyEventButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(buttonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(moveDownButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(moveUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(addEventButton, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(eventTypesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(buttonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(moveDownButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(moveUpButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         buttonsPanelLayout.setVerticalGroup(
             buttonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonsPanelLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addContainerGap()
                 .addGroup(buttonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(playEventsButton)
+                    .addComponent(saveEventsButton)
                     .addComponent(addEventButton)
                     .addComponent(eventTypesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(moveUpButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(buttonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(deleteEventButton)
-                    .addComponent(modifyEventButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(buttonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(buttonsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(readEventsButton)
+                        .addComponent(deleteEventButton)
+                        .addComponent(modifyEventButton))
                     .addComponent(moveDownButton))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonsPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(playEventsButton)
-                .addGap(35, 35, 35))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout eventListPanelLayout = new javax.swing.GroupLayout(eventListPanel);
-        eventListPanel.setLayout(eventListPanelLayout);
-        eventListPanelLayout.setHorizontalGroup(
-            eventListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 466, Short.MAX_VALUE)
-        );
-        eventListPanelLayout.setVerticalGroup(
-            eventListPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 436, Short.MAX_VALUE)
-        );
+        eventListPanel.setLayout(new BoxLayout(eventListPanel, BoxLayout.PAGE_AXIS));
+        
 
         jScrollPane1.setViewportView(eventListPanel);
 
@@ -166,9 +176,13 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
         
         addEventButton.addActionListener(this);
         playEventsButton.addActionListener(this);
+        saveEventsButton.addActionListener(this);
+        readEventsButton.addActionListener(this);
+        modifyEventButton.addActionListener(this);
+        deleteEventButton.addActionListener(this);
         
         pack();
-        setSize(950, 600);
+        setSize(1000, 600);
     }
     
     public void lockPlayButton(){
@@ -177,6 +191,23 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
     
     public void unlockPlayButton(){
     	playEventsButton.setEnabled(true);
+    }
+    
+    public void setSelectedEventLabel(EventLabel eventLabel){
+    	if(selectedEventLabel!=null)
+    		selectedEventLabel.deselect();
+    	selectedEventLabel = eventLabel;
+    	paint(getGraphics());
+    }
+    
+    public void updateEventList(){
+    	eventListPanel.removeAll();
+    	List<IEvent> eventList = mainClass.getMainControl().getEvents();
+    	for(IEvent event : eventList){
+    		EventLabel label = new EventLabel(event, this);
+    		eventListPanel.add(label);
+    	}
+    	paint(getGraphics());
     }
 
 	public void actionPerformed(ActionEvent e) {
@@ -194,10 +225,31 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
 				mainClass.getMainControl().addTapEvent();
 			else if(opt==4)
 				mainClass.getMainControl().addTextEvent();
+			
+			List<IEvent> eventList = mainClass.getMainControl().getEvents();
+			IEvent addedEvent = eventList.get(eventList.size()-1);
+			EventLabel eventLabel = new EventLabel(addedEvent, this);
+			eventListPanel.add(eventLabel);
+		}
+		else if(e.getSource().equals(modifyEventButton)){
+			if(selectedEventLabel != null)
+				mainClass.getMainControl().modifyEvent(selectedEventLabel.getEvent());
+		}
+		else if(e.getSource().equals(deleteEventButton)){
+			if(selectedEventLabel!=null){
+				mainClass.getMainControl().deleteEvent(selectedEventLabel.getEvent());
+				selectedEventLabel = null;
+			}
 		}
 		else if(e.getSource().equals(playEventsButton)){
 			mainClass.getMainControl().playEvents();
 		}
-		
+		else if(e.getSource().equals(saveEventsButton)){
+			mainClass.getMainControl().saveEvents();
+		}
+		else if(e.getSource().equals(readEventsButton)){
+			mainClass.getMainControl().readEvents();
+		}
+		updateEventList();
 	}
 }

@@ -1,9 +1,11 @@
 package entities;
 
+import java.io.Serializable;
+
 /**
 * This event manages the Input swipe event for the Android Shell,
 * This can be used to throw a longclick*/
-public class InputSwipe implements IEvent{
+public class InputSwipe implements IEvent, Serializable{
 	private int x1;
 	private int y1;
 	private int x2;

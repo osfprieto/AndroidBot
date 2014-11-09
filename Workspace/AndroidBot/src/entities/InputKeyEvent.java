@@ -1,9 +1,11 @@
 package entities;
 
+import java.io.Serializable;
+
 /**
  * This event manages the Input keyevent event for the Android Shell.
  * We can use this for the spaces on text*/
-public class InputKeyEvent implements IEvent{
+public class InputKeyEvent implements IEvent, Serializable{
 
 	private int keyCodeNumber;
 	
