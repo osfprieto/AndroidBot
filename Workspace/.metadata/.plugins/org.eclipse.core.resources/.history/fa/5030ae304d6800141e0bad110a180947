@@ -245,7 +245,7 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
     		EventLabel label = new EventLabel(event, this, isSelected);
     		eventListPanel.add(label);
     	}
-    	revalidate();
+    	revalidate()
     }
 
 	public void actionPerformed(ActionEvent e) {

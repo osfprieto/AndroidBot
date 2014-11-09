@@ -232,6 +232,7 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
     	if(selectedEventLabel!=null)
     		selectedEventLabel.deselect();
     	selectedEventLabel = eventLabel;
+    	paint(getGraphics());
     }
     
     public void updateEventList(){
@@ -245,7 +246,7 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
     		EventLabel label = new EventLabel(event, this, isSelected);
     		eventListPanel.add(label);
     	}
-    	revalidate();
+    	repaint();
     }
 
 	public void actionPerformed(ActionEvent e) {
