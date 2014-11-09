@@ -207,10 +207,8 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
     	List<IEvent> eventList = mainClass.getMainControl().getEvents();
     	for(IEvent event : eventList){
     		boolean isSelected = false;
-    		
     		if(selectedEventLabel!=null)
     			event.equals(selectedEventLabel.getEvent());
-    		
     		EventLabel label = new EventLabel(event, this, isSelected);
     		eventListPanel.add(label);
     	}

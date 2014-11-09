@@ -180,11 +180,9 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
         readEventsButton.addActionListener(this);
         modifyEventButton.addActionListener(this);
         deleteEventButton.addActionListener(this);
-        moveDownButton.addActionListener(this);
-        moveUpButton.addActionListener(this);
         
         pack();
-        setSize(1020, 600);
+        setSize(10200, 600);
     }
     
     public void lockPlayButton(){
@@ -206,12 +204,7 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
     	eventListPanel.removeAll();
     	List<IEvent> eventList = mainClass.getMainControl().getEvents();
     	for(IEvent event : eventList){
-    		boolean isSelected = false;
-    		
-    		if(selectedEventLabel!=null)
-    			event.equals(selectedEventLabel.getEvent());
-    		
-    		EventLabel label = new EventLabel(event, this, isSelected);
+    		EventLabel label = new EventLabel(event, this);
     		eventListPanel.add(label);
     	}
     	paint(getGraphics());
@@ -235,7 +228,7 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
 			
 			List<IEvent> eventList = mainClass.getMainControl().getEvents();
 			IEvent addedEvent = eventList.get(eventList.size()-1);
-			EventLabel eventLabel = new EventLabel(addedEvent, this, false);
+			EventLabel eventLabel = new EventLabel(addedEvent, this);
 			eventListPanel.add(eventLabel);
 		}
 		else if(e.getSource().equals(modifyEventButton)){
@@ -247,14 +240,6 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
 				mainClass.getMainControl().deleteEvent(selectedEventLabel.getEvent());
 				selectedEventLabel = null;
 			}
-		}
-		else if(e.getSource().equals(moveDownButton)){
-			if(selectedEventLabel!=null)
-				mainClass.getMainControl().moveDown(selectedEventLabel.getEvent());
-		}
-		else if(e.getSource().equals(moveUpButton)){
-			if(selectedEventLabel!=null)
-				mainClass.getMainControl().moveUp(selectedEventLabel.getEvent());
 		}
 		else if(e.getSource().equals(playEventsButton)){
 			mainClass.getMainControl().playEvents();

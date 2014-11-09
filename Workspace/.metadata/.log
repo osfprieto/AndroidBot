@@ -890,3 +890,31 @@ org.eclipse.core.runtime.CoreException: Cannot determine URI for '/AndroidBot/sr
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
 !SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2014-11-09 12:20:19.568
 !MESSAGE Cannot determine URI for '/AndroidBot/src/control/IMainControl.java'.
+
+!ENTRY org.eclipse.core.net 4 0 2014-11-09 12:33:39.393
+!MESSAGE WinHttp.DetectAutoProxyConfigUrl for wpad failed with error 'No se encontró la dirección URL de configuración automática del proxy.
+' #12180.
+
+!ENTRY org.eclipse.core.net 4 0 2014-11-09 12:33:39.393
+!MESSAGE WinHttp.DetectAutoProxyConfigUrl for wpad failed with error 'No se encontró la dirección URL de configuración automática del proxy.
+' #12180.
+
+!ENTRY org.eclipse.core.net 4 0 2014-11-09 12:33:39.394
+!MESSAGE WinHttp.DetectAutoProxyConfigUrl for wpad failed with error 'No se encontró la dirección URL de configuración automática del proxy.
+' #12180.
+
+!ENTRY org.eclipse.core.net 4 0 2014-11-09 12:33:39.395
+!MESSAGE WinHttp.DetectAutoProxyConfigUrl for wpad failed with error 'No se encontró la dirección URL de configuración automática del proxy.
+' #12180.
+
+!ENTRY org.eclipse.core.net 4 0 2014-11-09 12:33:39.396
+!MESSAGE WinHttp.DetectAutoProxyConfigUrl for wpad failed with error 'No se encontró la dirección URL de configuración automática del proxy.
+' #12180.
+
+!ENTRY org.eclipse.core.net 4 0 2014-11-09 12:33:39.396
+!MESSAGE WinHttp.DetectAutoProxyConfigUrl for wpad failed with error 'No se encontró la dirección URL de configuración automática del proxy.
+' #12180.
+
+!ENTRY org.eclipse.core.net 4 0 2014-11-09 12:33:39.397
+!MESSAGE WinHttp.DetectAutoProxyConfigUrl for wpad failed with error 'No se encontró la dirección URL de configuración automática del proxy.
+' #12180.

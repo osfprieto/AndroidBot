@@ -18,10 +18,10 @@ public class EventLabel extends JLabel implements MouseListener{
 	private IMainUI mainUI;
 	private boolean isSelected;
 	
-	public EventLabel(IEvent event, IMainUI mainUI, boolean isSelected){
+	public EventLabel(IEvent event, IMainUI mainUI){
 		this.event = event;
 		this.mainUI = mainUI;
-		this.isSelected = isSelected;
+		isSelected = false;
 		setOpaque(true);
 		setBackground(BG_COLOR);
 		setText(event.getCommand());

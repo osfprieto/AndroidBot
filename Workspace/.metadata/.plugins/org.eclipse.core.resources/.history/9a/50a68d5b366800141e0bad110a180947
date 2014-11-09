@@ -20,7 +20,5 @@ public interface IMainControl {
 	
 	public void modifyEvent(IEvent event);
 	public void deleteEvent(IEvent event);
-	public void moveUp(IEvent event);
-	public void moveDown(IEvent event);
 	
 }

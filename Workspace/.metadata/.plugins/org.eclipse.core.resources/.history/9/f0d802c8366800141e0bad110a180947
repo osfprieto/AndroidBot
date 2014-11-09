@@ -119,7 +119,7 @@ public class MainControl implements IMainControl, Serializable{
 	
 	public void moveUp(IEvent event){
 		int index = events.indexOf(event);
-		if(index>0){//If it's not the first event.
+		if(index>0){
 			events.remove(index);
 			events.add(index-1, event);
 		}
@@ -127,9 +127,9 @@ public class MainControl implements IMainControl, Serializable{
 	
 	public void moveDown(IEvent event){
 		int index = events.indexOf(event);
-		if(index<events.size()-1){//If it's not the last event.
+		if(index<events.size()-1){
 			events.remove(index);
-			events.add(index+1, event);
+			events.add(index-1, event);
 		}
 	}
 }
