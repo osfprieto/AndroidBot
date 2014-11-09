@@ -175,6 +175,6 @@ public class MainControl implements IMainControl, Serializable{
 		
 		//Pull the image to the working directory
 		command = "adb pull "+dataResolver.getDeviceImageFileLocation()+" "+dataResolver.getLocalImageFileLocation();
-		commandExecuter.executeCommand(command);
+		commandExecuter.executeCommand(command)
 	}
 }

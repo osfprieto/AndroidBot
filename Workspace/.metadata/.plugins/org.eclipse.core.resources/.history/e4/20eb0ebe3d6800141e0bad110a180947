@@ -24,7 +24,6 @@ public class MainControl implements IMainControl, Serializable{
 	private IMainClass mainClass;
 	private IPersistenceControl persistenceControl;
 	private IDataResolver dataResolver;
-	private Thread imagePullingThread;
 	
 	public MainControl(IMainClass mainClass){
 		this.mainClass = mainClass;
@@ -32,7 +31,6 @@ public class MainControl implements IMainControl, Serializable{
 				.getInstanceOf(IDataResolver.class, null/*args*/);
 		events = new LinkedList<IEvent>();
 		commandExecuter = new ShellCommandExecuter();
-		commandExecuter.executeCommand("adb shell mkdir "+dataResolver.getDeviceWorkingDirectory());
 		persistenceControl = new PersistenceControl();
 		startImageThread();
 	}
@@ -151,7 +149,7 @@ public class MainControl implements IMainControl, Serializable{
 	}
 	
 	private void startImageThread(){
-		imagePullingThread = new Thread(new Runnable(){
+		Thread tt = new Thread(new Runnable(){
 
 			@Override
 			public void run() {
@@ -165,16 +163,9 @@ public class MainControl implements IMainControl, Serializable{
 			}
 			
 		});
-		imagePullingThread.start();
 	}
 	
 	private void pullImageFromDevice(){
-		//Take the screenshot
-		String command = "adb shell screencap "+dataResolver.getDeviceImageFileLocation();
-		commandExecuter.executeCommand(command);
 		
-		//Pull the image to the working directory
-		command = "adb pull "+dataResolver.getDeviceImageFileLocation()+" "+dataResolver.getLocalImageFileLocation();
-		commandExecuter.executeCommand(command);
 	}
 }

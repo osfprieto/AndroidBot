@@ -1,5 +1,4 @@
 INDEX VERSION 1.127+D:\Documentos\Workspaces\Repos\AndroidBot\Workspace\.metadata\.plugins\org.eclipse.jdt.core
-3430675680.index
 1657330681.index
 3353442650.index
 2845285434.index

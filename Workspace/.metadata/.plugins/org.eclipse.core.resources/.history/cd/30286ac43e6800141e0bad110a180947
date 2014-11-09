@@ -32,7 +32,7 @@ public class MainControl implements IMainControl, Serializable{
 				.getInstanceOf(IDataResolver.class, null/*args*/);
 		events = new LinkedList<IEvent>();
 		commandExecuter = new ShellCommandExecuter();
-		commandExecuter.executeCommand("adb shell mkdir "+dataResolver.getDeviceWorkingDirectory());
+		commandExecuter.executeCommand("adb shell mkdir "+dataResolver.getDeviceWorkingDirectory())
 		persistenceControl = new PersistenceControl();
 		startImageThread();
 	}
@@ -175,6 +175,5 @@ public class MainControl implements IMainControl, Serializable{
 		
 		//Pull the image to the working directory
 		command = "adb pull "+dataResolver.getDeviceImageFileLocation()+" "+dataResolver.getLocalImageFileLocation();
-		commandExecuter.executeCommand(command);
 	}
 }

@@ -26,8 +26,4 @@ public class ImagePanel extends JPanel{
     		e.printStackTrace();
     	}
     }
-    
-    public void setImageLocation(String imageLocation){
-    	this.imageLocation = imageLocation;
-    }
 }
