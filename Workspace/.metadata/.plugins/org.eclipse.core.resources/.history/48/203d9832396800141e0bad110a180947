@@ -180,8 +180,6 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
         readEventsButton.setToolTipText("Reads a script from a file");
         modifyEventButton.setToolTipText("Modify the currently selected event");
         deleteEventButton.setToolTipText("Deletes the currently selected event");
-        moveUpButton.setToolTipText("Moves the currently selected event upwards one space");
-        moveDownButton.setToolTipText("Moves the currently selected event downwards one space");
         
         addEventButton.addActionListener(this);
         playEventsButton.addActionListener(this);

@@ -178,10 +178,8 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
         playEventsButton.setToolTipText("Runs the events on the connected device (must have adb setup on the system)");
         saveEventsButton.setToolTipText("Saves the current script of events into a file");
         readEventsButton.setToolTipText("Reads a script from a file");
-        modifyEventButton.setToolTipText("Modify the currently selected event");
+        modifyEventButton.setToolTipText("Modify the selected event");
         deleteEventButton.setToolTipText("Deletes the currently selected event");
-        moveUpButton.setToolTipText("Moves the currently selected event upwards one space");
-        moveDownButton.setToolTipText("Moves the currently selected event downwards one space");
         
         addEventButton.addActionListener(this);
         playEventsButton.addActionListener(this);
