@@ -35,7 +35,7 @@ public class InputTextUI implements IEventUI{
 	
 	public void show(){
 		textField.setText(event.getText());
-		JOptionPane.showMessageDialog(null, panel, "Text Event", JOptionPane.QUESTION_MESSAGE);
+		JOptionPane.showMessageDialog(null, panel);
 		event.setText(textField.getText());
 	}
 	

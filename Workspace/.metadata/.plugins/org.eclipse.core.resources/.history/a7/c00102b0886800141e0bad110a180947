@@ -33,7 +33,7 @@ public class InputKeyEventUI implements IEventUI{
 	
 	public void show(){
 		keyCodeSpinner.setValue(event.getKeyCodeNumber());
-		JOptionPane.showMessageDialog(null, panel, "Key Event", JOptionPane.QUESTION_MESSAGE);
+		JOptionPane.showMessageDialog(null, panel);
 		event.setKeyCodeNumber((Integer)keyCodeSpinner.getValue());
 	}
 	

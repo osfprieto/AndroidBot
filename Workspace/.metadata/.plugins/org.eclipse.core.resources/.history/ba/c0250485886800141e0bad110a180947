@@ -34,8 +34,7 @@ public class InputRotationEventUI implements IEventUI{
 	}
 	
 	public void show(){
-		combo.setSelectedIndex(event.getRotationCode());
-		JOptionPane.showMessageDialog(null, panel, "Rotation Event", JOptionPane.QUESTION_MESSAGE);
+		JOptionPane.showMessageDialog(null, panel);
 		event.setRotationCode(combo.getSelectedIndex());
 	}
 	

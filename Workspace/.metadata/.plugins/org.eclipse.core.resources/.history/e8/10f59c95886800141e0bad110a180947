@@ -22,9 +22,5 @@ public class InputRotationEvent implements IEvent, Serializable{
 	public void setRotationCode(int rotationCode){
 		this.rotationCode = rotationCode;
 	}
-	
-	public int getRotationCode(){
-		return rotationCode;
-	}
 
 }

@@ -40,7 +40,7 @@ public class InputTapUI implements IEventUI{
 	public void show(){
 		xSpinner.setValue(event.getX());
 		ySpinner.setValue(event.getY());
-		JOptionPane.showMessageDialog(null, panel, "Tap Event", JOptionPane.QUESTION_MESSAGE);
+		JOptionPane.showMessageDialog(null, panel);
 		event.setX((Integer)xSpinner.getValue());
 		event.setY((Integer)ySpinner.getValue());
 	}
