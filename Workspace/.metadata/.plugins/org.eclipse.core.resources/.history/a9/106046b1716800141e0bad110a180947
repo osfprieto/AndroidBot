@@ -10,7 +10,6 @@ import entities.InputRotationEvent;
 import entities.InputSwipe;
 import entities.InputTap;
 import entities.InputText;
-import gui.IEventUI;
 import gui.InputKeyEventUI;
 import gui.InputRotationEventUI;
 import gui.InputSwipeUI;
@@ -51,7 +50,6 @@ public class MainControl implements IMainControl, Serializable{
 				mainClass.getFactory().getInstanceOf(InputKeyEvent.class, args);
 		events.add(keyEvent);
 		args = new Object[1];
-		args[0] = keyEvent;
 		InputKeyEventUI ui = (InputKeyEventUI)
 				mainClass.getFactory().getInstanceOf(InputKeyEventUI.class, args);
 		ui.show();
@@ -63,11 +61,7 @@ public class MainControl implements IMainControl, Serializable{
 		InputRotationEvent rotationEvent =  (InputRotationEvent)
 				mainClass.getFactory().getInstanceOf(InputRotationEvent.class, args);
 		events.add(rotationEvent);
-		
-		args = new Object[1];
-		args[0] = rotationEvent;
-		InputRotationEventUI ui = (InputRotationEventUI)
-				mainClass.getFactory().getInstanceOf(InputRotationEventUI.class, args);
+		InputRotationEventUI ui = new InputRotationEventUI(rotationEvent);
 		ui.show();
 	}
 	
@@ -81,11 +75,7 @@ public class MainControl implements IMainControl, Serializable{
 		InputSwipe swipe = (InputSwipe)
 				mainClass.getFactory().getInstanceOf(InputSwipe.class, args);
 		events.add(swipe);
-		
-		args = new Object[1];
-		args[0] = swipe;
-		InputSwipeUI ui = (InputSwipeUI)
-				mainClass.getFactory().getInstanceOf(InputSwipeUI.class, args);
+		InputSwipeUI ui = new InputSwipeUI(swipe);
 		ui.show();
 	}
 	
@@ -96,11 +86,7 @@ public class MainControl implements IMainControl, Serializable{
 		InputTap tap = (InputTap)
 				mainClass.getFactory().getInstanceOf(InputTap.class, args);
 		events.add(tap);
-		
-		args = new Object[1];
-		args[0] = tap;
-		InputTapUI ui = (InputTapUI)
-				mainClass.getFactory().getInstanceOf(InputTapUI.class, args);
+		InputTapUI ui = new InputTapUI(tap);
 		ui.show();
 	}
 	
@@ -110,11 +96,7 @@ public class MainControl implements IMainControl, Serializable{
 		InputText text = (InputText)
 				mainClass.getFactory().getInstanceOf(InputText.class, args);
 		events.add(text);
-		
-		args = new Object[1];
-		args[0] = text;
-		InputTextUI ui = (InputTextUI)
-				mainClass.getFactory().getInstanceOf(InputTextUI.class, args);
+		InputTextUI ui = new InputTextUI(text);
 		ui.show();
 	}
 	
@@ -150,26 +132,24 @@ public class MainControl implements IMainControl, Serializable{
 	}
 	
 	public void modifyEvent(IEvent event){
-		Object[] args = new Object[1];
-		args[0] = event;
-		IEventUI ui = null;
 		if(event.getClass().equals(InputKeyEvent.class)){
-			ui = (InputKeyEventUI) mainClass.getFactory().getInstanceOf(InputKeyEventUI.class, args);
+			InputKeyEventUI ui = new InputKeyEventUI((InputKeyEvent) event);
+			ui.show();
 		}
 		else if(event.getClass().equals(InputRotationEvent.class)){
-			ui = (InputRotationEventUI) mainClass.getFactory().getInstanceOf(InputRotationEventUI.class, args);
+			InputRotationEventUI ui = new InputRotationEventUI((InputRotationEvent) event);
+			ui.show();
 		}
 		else if(event.getClass().equals(InputSwipe.class)){
-			ui = (InputSwipeUI) mainClass.getFactory().getInstanceOf(InputSwipeUI.class, args);
+			InputSwipeUI ui = new InputSwipeUI((InputSwipe) event);
+			ui.show();
 		}
 		else if(event.getClass().equals(InputTap.class)){
-			ui = (InputTapUI) mainClass.getFactory().getInstanceOf(InputTapUI.class, args);
+			InputTapUI ui = new InputTapUI((InputTap) event);
+			ui.show();
 		}
 		else if(event.getClass().equals(InputText.class)){
-			ui = (InputTextUI) mainClass.getFactory().getInstanceOf(InputTextUI.class, args);
-		}
-		
-		if(ui!=null){
+			InputTextUI ui = new InputTextUI((InputText) event);
 			ui.show();
 		}
 	}

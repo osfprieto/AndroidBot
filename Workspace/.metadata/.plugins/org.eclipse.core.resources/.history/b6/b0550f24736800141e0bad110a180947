@@ -151,7 +151,6 @@ public class MainControl implements IMainControl, Serializable{
 	
 	public void modifyEvent(IEvent event){
 		Object[] args = new Object[1];
-		args[0] = event;
 		IEventUI ui = null;
 		if(event.getClass().equals(InputKeyEvent.class)){
 			ui = (InputKeyEventUI) mainClass.getFactory().getInstanceOf(InputKeyEventUI.class, args);

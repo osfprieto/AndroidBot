@@ -151,22 +151,21 @@ public class MainControl implements IMainControl, Serializable{
 	
 	public void modifyEvent(IEvent event){
 		Object[] args = new Object[1];
-		args[0] = event;
 		IEventUI ui = null;
 		if(event.getClass().equals(InputKeyEvent.class)){
-			ui = (InputKeyEventUI) mainClass.getFactory().getInstanceOf(InputKeyEventUI.class, args);
+			ui = new InputKeyEventUI((InputKeyEvent) event);
 		}
 		else if(event.getClass().equals(InputRotationEvent.class)){
-			ui = (InputRotationEventUI) mainClass.getFactory().getInstanceOf(InputRotationEventUI.class, args);
+			ui = new InputRotationEventUI((InputRotationEvent) event);
 		}
 		else if(event.getClass().equals(InputSwipe.class)){
-			ui = (InputSwipeUI) mainClass.getFactory().getInstanceOf(InputSwipeUI.class, args);
+			ui = new InputSwipeUI((InputSwipe) event);
 		}
 		else if(event.getClass().equals(InputTap.class)){
-			ui = (InputTapUI) mainClass.getFactory().getInstanceOf(InputTapUI.class, args);
+			ui = new InputTapUI((InputTap) event);
 		}
 		else if(event.getClass().equals(InputText.class)){
-			ui = (InputTextUI) mainClass.getFactory().getInstanceOf(InputTextUI.class, args);
+			ui = new InputTextUI((InputText) event);
 		}
 		
 		if(ui!=null){

@@ -11,7 +11,6 @@ import gui.InputKeyEventUI;
 import gui.InputRotationEventUI;
 import gui.InputSwipeUI;
 import gui.InputTapUI;
-import gui.InputTextUI;
 
 /**
  * Implementation of the IFactory interface that instantiates every object used by the program.
@@ -69,8 +68,8 @@ public class Factory implements IFactory{
 			if(clazz.equals(InputTapUI.class)){
 				return new InputTapUI((InputTap)args[0]);
 			}
-			if(clazz.equals(InputTextUI.class)){
-				return new InputTextUI((InputText) args[0]);
+			if(clazz.equals(InputText.class)){
+				return new InputText((String) args[0]/*text*/);
 			}
 			
 			//Singleton classes

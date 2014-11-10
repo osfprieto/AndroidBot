@@ -7,11 +7,6 @@ import entities.InputRotationEvent;
 import entities.InputSwipe;
 import entities.InputTap;
 import entities.InputText;
-import gui.InputKeyEventUI;
-import gui.InputRotationEventUI;
-import gui.InputSwipeUI;
-import gui.InputTapUI;
-import gui.InputTextUI;
 
 /**
  * Implementation of the IFactory interface that instantiates every object used by the program.
@@ -38,7 +33,6 @@ public class Factory implements IFactory{
 			
 			//Classes of multiple instances. Usually an entity.
 			
-			//IEvent
 			if(clazz.equals(InputKeyEvent.class)){
 				return new InputKeyEvent((Integer)args[0]/*keyCode*/);
 			}
@@ -54,23 +48,6 @@ public class Factory implements IFactory{
 			}
 			if(clazz.equals(InputText.class)){
 				return new InputText((String) args[0]/*text*/);
-			}
-			
-			//IEventUI
-			if(clazz.equals(InputKeyEventUI.class)){
-				return new InputKeyEventUI((InputKeyEvent)args[0]);
-			}
-			if(clazz.equals(InputRotationEventUI.class)){
-				return new InputRotationEventUI((InputRotationEvent)args[0]);
-			}
-			if(clazz.equals(InputSwipeUI.class)){
-				return new InputSwipeUI((InputSwipe) args[0]);
-			}
-			if(clazz.equals(InputTapUI.class)){
-				return new InputTapUI((InputTap)args[0]);
-			}
-			if(clazz.equals(InputTextUI.class)){
-				return new InputTextUI((InputText) args[0]);
 			}
 			
 			//Singleton classes
