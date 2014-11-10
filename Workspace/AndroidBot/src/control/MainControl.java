@@ -194,6 +194,50 @@ public class MainControl implements IMainControl, Serializable{
 		}
 	}
 	
+	public void addTapEvent(int xOnScreen, int yOnScreen,
+			int screenWidth, int screenHeight,
+			int deviceWidth, int deviceHeight){
+		
+		double xProportion = (double)deviceWidth/(double)screenWidth;
+		double yProportion = (double)deviceHeight/(double)screenHeight;
+		
+		int xOnDevice = (int)((double)xOnScreen*xProportion);
+		int yOnDevice = (int)((double)yOnScreen*yProportion);
+		
+		Object[] args = new Object[2];
+		args[0] = xOnDevice;
+		args[1] = yOnDevice;
+		InputTap tap = (InputTap)
+				mainClass.getFactory().getInstanceOf(InputTap.class, args);
+		events.add(tap);
+		mainClass.getMainUI().updateEventList();
+	}
+	public void addSwipeEvent(int x1OnScreen, int y1OnScreen,
+			int x2OnScreen, int y2OnScreen,
+			int screenWidth, int screenHeight,
+			int deviceWidth, int deviceHeight){
+		
+		double xProportion = (double)deviceWidth/(double)screenWidth;
+		double yProportion = (double)deviceHeight/(double)screenHeight;
+		
+		int x1OnDevice = (int)((double)x1OnScreen*xProportion);
+		int y1OnDevice = (int)((double)y1OnScreen*yProportion);
+		
+		int x2OnDevice = (int)((double)x2OnScreen*xProportion);
+		int y2OnDevice = (int)((double)y2OnScreen*yProportion);
+		
+		Object[] args = new Object[5];
+		args[0] = x1OnDevice;
+		args[1] = y1OnDevice;
+		args[2] = x2OnDevice;
+		args[3] = y2OnDevice;
+		args[4] = new Long(1000);
+		InputSwipe swipe = (InputSwipe)
+				mainClass.getFactory().getInstanceOf(InputSwipe.class, args);
+		events.add(swipe);
+		mainClass.getMainUI().updateEventList();
+	}
+	
 	private void startImageThread(){
 		imagePullingThread = new Thread(new Runnable(){
 

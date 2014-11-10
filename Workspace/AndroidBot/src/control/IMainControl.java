@@ -24,4 +24,11 @@ public interface IMainControl {
 	public void moveUp(IEvent event);
 	public void moveDown(IEvent event);
 	
+	public void addTapEvent(int xOnScreen, int yOnScreen,
+			int screenWidth, int screenHeight,
+			int deviceWidth, int deviceHeight);
+	public void addSwipeEvent(int x1OnScreen, int y1OnScreen,
+			int x2OnScreen, int y2OnScreen,
+			int screenWidth, int screenHeight,
+			int deviceWidth, int deviceHeight);
 }

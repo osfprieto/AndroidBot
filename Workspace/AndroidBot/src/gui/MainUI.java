@@ -53,7 +53,7 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
     	
-        imagePanel = new ImagePanel(dataResolver.getLocalImageFileLocation());
+        imagePanel = new ImagePanel(dataResolver.getLocalImageFileLocation(), this);
         buttonsPanel = new javax.swing.JPanel();
         playEventsButton = new javax.swing.JButton();
         playEventsFromSelectedButton = new javax.swing.JButton();
@@ -214,6 +214,10 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
         
         pack();
         setSize(1020, 630);
+    }
+    
+    public IMainClass getMainClass(){
+    	return mainClass;
     }
     
     public void lockPlayButton(){
