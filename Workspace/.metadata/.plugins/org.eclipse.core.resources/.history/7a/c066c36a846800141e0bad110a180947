@@ -47,7 +47,7 @@ public class Factory implements IFactory{
 			}
 			if(clazz.equals(InputSwipe.class)){
 				return new InputSwipe((Integer) args[0]/*x1*/, (Integer) args[1]/*y1*/,
-						(Integer) args[2]/*x2*/, (Integer) args[3]/*y2*/, (Integer) args[4]/*millis*/);
+						(Integer) args[2]/*x2*/, (Integer) args[3]/*y2*/, (Long) args[4]/*millis*/);
 			}
 			if(clazz.equals(InputTap.class)){
 				return new InputTap((Integer)args[0]/*x*/, (Integer)args[1]/*y*/);

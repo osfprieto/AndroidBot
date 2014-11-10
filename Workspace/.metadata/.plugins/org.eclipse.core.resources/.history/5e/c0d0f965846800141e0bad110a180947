@@ -63,7 +63,7 @@ public class InputSwipe implements IEvent, Serializable{
 		this.y2 = y2;
 	}
 
-	public int getMillis() {
+	public long getMillis() {
 		return millis;
 	}
 

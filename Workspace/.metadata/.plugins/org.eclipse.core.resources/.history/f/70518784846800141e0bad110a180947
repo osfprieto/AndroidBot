@@ -77,7 +77,7 @@ public class MainControl implements IMainControl, Serializable{
 		args[1] = 0;
 		args[2] = 100;
 		args[3] = 100;
-		args[4] = 1000;
+		args[4] = new Long(1000);
 		InputSwipe swipe = (InputSwipe)
 				mainClass.getFactory().getInstanceOf(InputSwipe.class, args);
 		events.add(swipe);
@@ -232,7 +232,7 @@ public class MainControl implements IMainControl, Serializable{
 		args[1] = y1OnDevice;
 		args[2] = x2OnDevice;
 		args[3] = y2OnDevice;
-		args[4] = 1000;
+		args[4] = new Long(1000);
 		InputSwipe swipe = (InputSwipe)
 				mainClass.getFactory().getInstanceOf(InputSwipe.class, args);
 		events.add(swipe);

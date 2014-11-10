@@ -60,7 +60,7 @@ public class InputSwipeUI implements IEventUI{
 		event.setY1((Integer)y1Spinner.getValue());
 		event.setX2((Integer)x2Spinner.getValue());
 		event.setY2((Integer)y2Spinner.getValue());
-		event.setMillis((Integer)millis.getValue());
+		event.setMillis((Long)millis.getValue());
 	}
 	
 }
