@@ -213,7 +213,7 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
         moveUpButton.addActionListener(this);
         
         pack();
-        setSize(1020, 630);
+        setSize(1020, 600);
     }
     
     public void lockPlayButton(){
@@ -245,11 +245,6 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
     	}
     	eventListPanel.setVisible(false);
     	eventListPanel.setVisible(true);
-    }
-    
-    public void repaintScreenshot(){
-    	imagePanel.setVisible(false);
-    	imagePanel.setVisible(true);
     }
 
 	public void actionPerformed(ActionEvent e) {

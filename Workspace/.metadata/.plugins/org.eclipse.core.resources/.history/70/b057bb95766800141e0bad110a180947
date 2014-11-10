@@ -245,9 +245,6 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
     	}
     	eventListPanel.setVisible(false);
     	eventListPanel.setVisible(true);
-    }
-    
-    public void repaintScreenshot(){
     	imagePanel.setVisible(false);
     	imagePanel.setVisible(true);
     }

@@ -22,8 +22,8 @@ public class ImagePanel extends JPanel{
     		File file = new File(imageLocation);
     		BufferedImage image = ImageIO.read(file);
     		g.drawImage(image, 0/*x start dest*/, 0/*y start dest*/, 400/*x end dest*/, 580/*x end dest*/,
-    				0/*x start source*/, 0/*y start source*/, image.getWidth(), image.getHeight(),
-    				null/*observer*/);
+    				0/*x start source*/, 0/*y start source*/, image.getWidth(), image.getHeight()
+    				, null/*observer*/);
     	}catch(Exception e){
     		e.printStackTrace();
     	}
