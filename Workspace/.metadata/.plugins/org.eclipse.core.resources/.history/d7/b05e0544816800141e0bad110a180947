@@ -41,7 +41,6 @@ public class MainUI extends javax.swing.JFrame implements IMainUI, ActionListene
      * Creates new form MainUI
      */
     public MainUI(IMainClass mainClass) {
-    	super("AndroidBot");
     	this.mainClass = mainClass;
     	dataResolver = (IDataResolver) mainClass.getFactory()
 				.getInstanceOf(IDataResolver.class, null/*args*/);
