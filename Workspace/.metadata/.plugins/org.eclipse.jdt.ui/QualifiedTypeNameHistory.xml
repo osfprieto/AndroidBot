@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="entities.IEvent"/>
 <fullyQualifiedTypeName name="tests.entities.InputEventFactoryTest"/>
 <fullyQualifiedTypeName name="control.IConstants"/>
 <fullyQualifiedTypeName name="control.ICommandExecuter"/>
-<fullyQualifiedTypeName name="java.awt.Graphics"/>
 <fullyQualifiedTypeName name="javax.imageio.ImageIO"/>
 <fullyQualifiedTypeName name="java.awt.image.BufferedImage"/>
 <fullyQualifiedTypeName name="java.io.File"/>
@@ -12,7 +10,6 @@
 <fullyQualifiedTypeName name="control.MainControl"/>
 <fullyQualifiedTypeName name="control.IDataResolver"/>
 <fullyQualifiedTypeName name="java.nio.file.Paths"/>
-<fullyQualifiedTypeName name="control.MainClass"/>
 <fullyQualifiedTypeName name="gui.MainUI"/>
 <fullyQualifiedTypeName name="gui.IMainUI"/>
 <fullyQualifiedTypeName name="control.IMainClass"/>
@@ -20,19 +17,26 @@
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
 <fullyQualifiedTypeName name="gui.KeyEventUI"/>
-<fullyQualifiedTypeName name="entities.InputRotationEvent"/>
 <fullyQualifiedTypeName name="javax.swing.JComboBox"/>
-<fullyQualifiedTypeName name="entities.InputKeyEvent"/>
-<fullyQualifiedTypeName name="gui.InputRotationEventUI"/>
 <fullyQualifiedTypeName name="entities.InputSwipe"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
-<fullyQualifiedTypeName name="gui.InputSwipeUI"/>
 <fullyQualifiedTypeName name="entities.InputTap"/>
-<fullyQualifiedTypeName name="gui.InputTapUI"/>
 <fullyQualifiedTypeName name="entities.InputText"/>
-<fullyQualifiedTypeName name="gui.InputTextUI"/>
 <fullyQualifiedTypeName name="control.ShellCommandExecuter"/>
-<fullyQualifiedTypeName name="javax.swing.JButton"/>
 <fullyQualifiedTypeName name="javax.swing.BoxLayout"/>
 <fullyQualifiedTypeName name="javax.swing.JLabel"/>
+<fullyQualifiedTypeName name="javax.swing.JButton"/>
+<fullyQualifiedTypeName name="java.awt.Graphics"/>
+<fullyQualifiedTypeName name="javax.swing.JScrollPane"/>
+<fullyQualifiedTypeName name="entities.InputKeyEvent"/>
+<fullyQualifiedTypeName name="entities.InputRotationEvent"/>
+<fullyQualifiedTypeName name="entities.IEvent"/>
+<fullyQualifiedTypeName name="gui.InputKeyEventUI"/>
+<fullyQualifiedTypeName name="gui.InputRotationEventUI"/>
+<fullyQualifiedTypeName name="gui.InputSwipeUI"/>
+<fullyQualifiedTypeName name="gui.InputTapUI"/>
+<fullyQualifiedTypeName name="gui.InputTextUI"/>
+<fullyQualifiedTypeName name="gui.IEventUI"/>
+<fullyQualifiedTypeName name="control.MainClass"/>
+<fullyQualifiedTypeName name="java.awt.event.MouseListener"/>
 </qualifiedTypeNameHistroy>
