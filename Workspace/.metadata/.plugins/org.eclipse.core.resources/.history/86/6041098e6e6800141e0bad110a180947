@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 import entities.InputRotationEvent;
 
-public class InputRotationEventUI implements IEventUI{
+public class InputRotationEventUI {
 
 	private InputRotationEvent event;
 	private JPanel panel;

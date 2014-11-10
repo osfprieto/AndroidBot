@@ -1,0 +1,8 @@
+package gui;
+
+public interface IEventUI {
+
+	public IEvent getEvent();
+	public void show();
+	
+}

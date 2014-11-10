@@ -9,7 +9,7 @@ import javax.swing.JSpinner;
 
 import entities.InputSwipe;
 
-public class InputSwipeUI implements IEventUI{
+public class InputSwipeUI {
 
 	private InputSwipe event;
 	private JPanel panel;

@@ -9,7 +9,7 @@ import javax.swing.JTextField;
 
 import entities.InputText;
 
-public class InputTextUI implements IEventUI{
+public class InputTextUI {
 	
 	private InputText event;
 	private JPanel panel;

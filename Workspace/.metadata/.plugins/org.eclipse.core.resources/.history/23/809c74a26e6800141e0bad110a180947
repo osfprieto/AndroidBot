@@ -9,7 +9,7 @@ import javax.swing.JSpinner;
 
 import entities.InputTap;
 
-public class InputTapUI implements IEventUI{
+public class InputTapUI {
 
 	private InputTap event;
 	private JPanel panel;
